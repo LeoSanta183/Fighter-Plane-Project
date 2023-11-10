@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
     public GameObject coinPrefab;
+    public int lives;
     public int score;
     public int cloudsMove;
     public TextMeshProUGUI scoreText;
@@ -26,7 +27,9 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("SpawnCoin", 1f, 2f);
         cloudsMove = 1;
         score = 0;
+        lives = 3;
         scoreText.text = "Score: " + score;
+        livesText.text = "Lives: " + lives;
         
     }
 
@@ -64,5 +67,11 @@ public class GameManager : MonoBehaviour
     {
         score = score + scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void LifeLost(int loseLife)
+    {
+        lives = lives - loseLife;
+        livesText.text = "Lives: " + lives;
     }
 }

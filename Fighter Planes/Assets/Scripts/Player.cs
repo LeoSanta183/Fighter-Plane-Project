@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     public void LoseLife()
     {
         lives--;
+        GameObject.Find("GameManager").GetComponent<GameManager>().LifeLost(1);
+        
         //lives -= 1;
         //lives = lives - 1;
         if (lives <= 0) 
