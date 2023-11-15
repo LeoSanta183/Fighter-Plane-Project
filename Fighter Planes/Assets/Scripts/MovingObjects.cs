@@ -24,10 +24,7 @@ public class MovingObjects : MonoBehaviour
         {
             //You are enemy one
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 2f);
-        } else if (objectType == 3)
-        {
-            transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 3f);
-        }
+        } 
 
         if(transform.position.y > 11f || transform.position.y < -11f) 
         {
